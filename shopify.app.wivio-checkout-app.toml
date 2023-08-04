@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Wivio Checkout App"
+client_id = "f8821cf7780c24e3a996414b877e2b54"
+application_url = "https://domains-competing-uganda-football.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://domains-competing-uganda-football.trycloudflare.com/auth/callback",
+  "https://domains-competing-uganda-football.trycloudflare.com/auth/shopify/callback",
+  "https://domains-competing-uganda-football.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "checkout-code-store.myshopify.com"

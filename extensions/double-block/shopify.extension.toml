@@ -1,0 +1,176 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2023-07"
+
+[[extensions]]
+type = "ui_extension"
+name = "double-block"
+handle = "double-block"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+# [extensions.settings]
+# [[extensions.settings.fields]]
+# key = "banner_title"
+# type = "single_line_text_field"
+# name = "Banner title"
+# description = "Enter a title for the banner"
+[settings]
+ [[settings.fields]]
+ key = "image_url"
+ type = "single_line_text_field"
+ name = "Image Url Link"
+ description = "Enter a url Link Copy & Past"
+ 
+ [[settings.fields]]
+ key = "heading"
+ type = "single_line_text_field"
+ name = "Heading"
+ description = "Enter a Heading Text"
+
+ [[settings.fields]]
+ key = "sub_heading"
+ type = "single_line_text_field"
+ name = "Sub Heading"
+ description = "Enter a Sub Heading Text"
+
+ [[settings.fields]]
+ key = "image_url1"
+ type = "single_line_text_field"
+ name = "Image Url Link"
+ description = "Enter a url Link Copy & Past"
+ 
+ [[settings.fields]]
+ key = "heading1"
+ type = "single_line_text_field"
+ name = "Heading"
+ description = "Enter a Heading Text"
+
+ [[settings.fields]]
+ key = "sub_heading1"
+ type = "single_line_text_field"
+ name = "Sub Heading"
+ description = "Enter a Sub Heading Text"
+
+# heading color settings
+
+ [[settings.fields]]
+ key = "heading_color"
+ type = "single_line_text_field"
+ name = "Heading Text Color"
+ description = "Select The Color Of Heading Text"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["accent", "critical", "info", "subdued", "success", "warning", "interactive", "monochrome"]'
+
+
+ [[settings.fields]]
+ key = "heading_size"
+ type = "single_line_text_field"
+ name = "Heading Text Size"
+ description = "Select The Size Of Heading Text"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["small", "medium", "large", "extrasmall", "extralarge", "base"]'
+
+# sub heading settings
+
+ [[settings.fields]]
+ key = "sub_heading_color"
+ type = "single_line_text_field"
+ name = "Sub Heading Text Color"
+ description = "Select The Color Of Sub Heading Text"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["accent", "critical", "info", "subdued", "success", "warning", "interactive", "monochrome"]'
+
+
+ [[settings.fields]]
+ key = "sub_heading_size"
+ type = "single_line_text_field"
+ name = "Sub Heading Text Size"
+ description = "Select The Size Of Sub Heading Text"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["small", "medium", "large", "extrasmall", "extralarge", "base"]'
+
+[[settings.fields]]
+ key = "block_spacing"
+ type = "single_line_text_field"
+ name = "Block Spacing inside Size"
+ description = "Block Spacing Inside"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["none", "base", "tight", "loose", "extraLoose", "extraTight", "large100", "large200", "large300", "large400", "large500", "small100", "small200", "small300", "small400", "small500"]'
+
+# Padding Settings outside block
+
+[[settings.fields]]
+ key = "block_padding_top"
+ type = "single_line_text_field"
+ name = "Block Padding Top"
+ description = "Top Padding Block Outside"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["none", "base", "tight", "loose", "extraLoose", "extraTight", "large100", "large200", "large300", "large400", "large500", "small100", "small200", "small300", "small400", "small500"]'
+
+[[settings.fields]]
+ key = "block_padding_right"
+ type = "single_line_text_field"
+ name = "Block Padding Right"
+ description = "Right Padding Block Outside"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["none", "base", "tight", "loose", "extraLoose", "extraTight", "large100", "large200", "large300", "large400", "large500", "small100", "small200", "small300", "small400", "small500"]'
+
+[[settings.fields]]
+ key = "block_padding_bottom"
+ type = "single_line_text_field"
+ name = "Block Padding Bottom"
+ description = "Bottom Padding Block Outside"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["none", "base", "tight", "loose", "extraLoose", "extraTight", "large100", "large200", "large300", "large400", "large500", "small100", "small200", "small300", "small400", "small500"]'
+
+[[settings.fields]]
+ key = "block_padding_left"
+ type = "single_line_text_field"
+ name = "Block Padding Left"
+ description = "Left Padding Block Outside"
+  [[settings.fields.validations]]
+   name = "choices"
+   value = '["none", "base", "tight", "loose", "extraLoose", "extraTight", "large100", "large200", "large300", "large400", "large500", "small100", "small200", "small300", "small400", "small500"]'
